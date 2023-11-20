@@ -121,15 +121,15 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: ACME System 1 - Download Monthly Invoices" sap:VirtualizedContainerService.HintSize="764,1892" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="068d4fa9-b85d-47f7-8365-a75dca88af4d" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: ACME System 1 - Download Monthly Invoices" sap:VirtualizedContainerService.HintSize="644,1627" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="068d4fa9-b85d-47f7-8365-a75dca88af4d" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="730,1675" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="610,1410" sap2010:WorkflowViewState.IdRef="TryCatch_1">
             <TryCatch.Try>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="692,1447" sap2010:WorkflowViewState.IdRef="Sequence_6">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,1182" sap2010:WorkflowViewState.IdRef="Sequence_6">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="s:String[]" Name="Months" />
                 </Sequence.Variables>
@@ -138,7 +138,7 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="630,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_3">
                   <Assign.To>
                     <OutArgument x:TypeArguments="s:String[]">[Months]</OutArgument>
                   </Assign.To>
@@ -146,7 +146,7 @@
                     <InArgument x:TypeArguments="s:String[]">[{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  vendorTaxID'" sap:VirtualizedContainerService.HintSize="630,155" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="IT754893">
+                <ui:TypeInto AlterIfDisabled="{x:Null}" ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SimulateType="{x:Null}" Activate="True" DisplayName="Type Into 'INPUT  vendorTaxID'" sap:VirtualizedContainerService.HintSize="510,155" sap2010:WorkflowViewState.IdRef="TypeInto_4" Text="[i_TransctionItem]">
                   <ui:TypeInto.Target>
                     <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="f0e3ba2b-6baa-4bb8-9195-35ecd9953f27" InformativeScreenshot="8a051a3d0f700e9efcf37b43a1f7a09c" Selector="&lt;webctrl id='vendorTaxID' tag='INPUT' /&gt;">
                       <ui:Target.TimeoutMS>
@@ -158,19 +158,19 @@
                     </ui:Target>
                   </ui:TypeInto.Target>
                 </ui:TypeInto>
-                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="630,1015" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Months]">
+                <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="510,750" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[Months]">
                   <ui:ForEach.Body>
                     <ActivityAction x:TypeArguments="x:String">
                       <ActivityAction.Argument>
                         <DelegateInArgument x:TypeArguments="x:String" Name="Month" />
                       </ActivityAction.Argument>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="596,829" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,564" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="554,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:String">[Month]</OutArgument>
                           </Assign.To>
@@ -178,7 +178,7 @@
                             <InArgument x:TypeArguments="x:String">[Month.ToString]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <uix:NSelectItem DisplayName="Select Item 'Month'" sap:VirtualizedContainerService.HintSize="554,157" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="[Month]" ScopeIdentifier="068d4fa9-b85d-47f7-8365-a75dca88af4d" Version="V3">
+                        <uix:NSelectItem DisplayName="Select Item 'Month'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NSelectItem_3" Item="[Month]" ScopeIdentifier="068d4fa9-b85d-47f7-8365-a75dca88af4d" Version="V3">
                           <uix:NSelectItem.Items>
                             <scg:List x:TypeArguments="x:String" Capacity="12">
                               <x:String>January</x:String>
@@ -205,7 +205,7 @@
                             </uix:TargetAnchorable>
                           </uix:NSelectItem.Target>
                         </uix:NSelectItem>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download Report'" sap:VirtualizedContainerService.HintSize="554,157" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="068d4fa9-b85d-47f7-8365-a75dca88af4d" Version="V3">
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Download Report'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="068d4fa9-b85d-47f7-8365-a75dca88af4d" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://acme-test.uipath.com/internal/download" DesignTimeRectangle="130, 499, 134, 34" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Download Report'" FullSelectorArgument="&lt;webctrl id='buttonDownload' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='buttonDownload' tag='BUTTON' type='button' class='btn btn-primary' aaname='Download Report' check:innerText='Download Report' /&gt;" Guid="bb12ee9e-6aae-4309-a02a-53057d3d9791" InformativeScreenshot="6f14a0267e6ad79bb4404717f5475d98.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='ACME System 1 - Download Monthly Invoices' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                               <uix:TargetAnchorable.Anchors>
@@ -216,7 +216,6 @@
                             </uix:TargetAnchorable>
                           </uix:NClick.Target>
                         </uix:NClick>
-                        <uix:NCheckState DisplayName="Check App State" sap:VirtualizedContainerService.HintSize="554,225" sap2010:WorkflowViewState.IdRef="NCheckState_1" />
                       </Sequence>
                     </ActivityAction>
                   </ui:ForEach.Body>
@@ -224,7 +223,7 @@
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="696,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="576,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
