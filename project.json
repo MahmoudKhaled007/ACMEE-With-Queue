@@ -45,7 +45,24 @@
     "processOptions": {
       "ignoredFiles": []
     },
-    "fileInfoCollection": [],
+    "fileInfoCollection": [
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "9b8a5ae9-00dc-4707-9103-16519398c071",
+        "testCaseType": "TestCase",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Test Cases\\Unit Testing\\TC_ACMEELogIn.xaml"
+      },
+      {
+        "editingStatus": "InProgress",
+        "testCaseId": "6852e919-cbae-4586-bbb1-5d18c833f553",
+        "executionTemplatePath": "Test With Timeout (UiPath.Testing.Activities);UiPath.Testing.Activities;Test With Timeout.xaml",
+        "testCaseType": "TestCase",
+        "executionTemplateType": "PackageFileTemplate",
+        "executionTemplateInvokeIsolated": false,
+        "fileName": "Test Cases\\Unit Testing\\TC_ExtractDataFromExcel.xaml"
+      }
+    ],
     "modernBehavior": false,
     "saveToCloud": false
   },
