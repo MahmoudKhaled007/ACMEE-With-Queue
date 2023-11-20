@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,906</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1906,3228</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ACMEELogIn_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,7 +105,7 @@
       <AssemblyReference>WindowsBase</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ACMEELogIn" sap:VirtualizedContainerService.HintSize="592,841" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ACMEELogIn" sap:VirtualizedContainerService.HintSize="1916,3163" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Username" />
       <Variable x:TypeArguments="ss:SecureString" Name="Password" />
@@ -115,22 +115,22 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="ACMELoginCredential" CacheStrategy="None" DisplayName="Get Credential" FolderPath="_Vois_Task" sap:VirtualizedContainerService.HintSize="530,143" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[Username]" />
-    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Opening ACME Website" AttachMode="ByInstance" DisplayName="ACME System 1 - Log In" sap:VirtualizedContainerService.HintSize="530,547" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="82fde188-c4b1-4709-826f-cb7a043f0884" Version="V2">
+    <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="ACMELoginCredential" CacheStrategy="None" DisplayName="Get Credential" FolderPath="_Vois_Task" sap:VirtualizedContainerService.HintSize="1854,144" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[Username]" />
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Opening ACME Website" AttachMode="ByInstance" DisplayName="ACME System 1 - Log In" sap:VirtualizedContainerService.HintSize="1854,2868" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="82fde188-c4b1-4709-826f-cb7a043f0884" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="496,299" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1820,2619" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1758,2498" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1758,2504" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
-                <Sequence DisplayName="Login Sequence" sap:VirtualizedContainerService.HintSize="1720,2265" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Login Sequence" sap:VirtualizedContainerService.HintSize="1720,2271" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="LoginButtonPage" />
                   </Sequence.Variables>
@@ -140,7 +140,7 @@
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1658,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Initiating Login to Acme&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1658,145" sap2010:WorkflowViewState.IdRef="LogMessage_4" Message="[&quot;Initiating Login to Acme&quot;]" />
                   <uix:NCheckState sap2010:Annotation.AnnotationText="if  LoginButton Found -&gt;&#xA;Robot will continue Login &#xA;Else -&gt; it will Continue the operation" DisplayName="Check App State 'Log In'" sap:VirtualizedContainerService.HintSize="1658,1971" sap2010:WorkflowViewState.IdRef="NCheckState_3" ScopeIdentifier="82fde188-c4b1-4709-826f-cb7a043f0884" Timeout="5" Version="V3">
                     <uix:NCheckState.IfExists>
                       <Sequence DisplayName="Target appears" sap:VirtualizedContainerService.HintSize="1108,1692" sap2010:WorkflowViewState.IdRef="Sequence_11">
@@ -293,7 +293,7 @@
                     <ActivityAction.Argument>
                       <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                     </ActivityAction.Argument>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;An error occurred during the login process:   &quot; +exception.Message]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;An error occurred during the login process:   &quot; +exception.Message]" />
                   </ActivityAction>
                 </Catch>
               </TryCatch.Catches>
