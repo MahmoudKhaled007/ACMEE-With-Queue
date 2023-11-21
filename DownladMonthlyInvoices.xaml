@@ -121,7 +121,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Chrome: ACME System 1 - Download Monthly Invoices" sap:VirtualizedContainerService.HintSize="644,1627" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="068d4fa9-b85d-47f7-8365-a75dca88af4d" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: ACME System 1 - Download Monthly Invoices" sap:VirtualizedContainerService.HintSize="644,1627" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="068d4fa9-b85d-47f7-8365-a75dca88af4d" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>

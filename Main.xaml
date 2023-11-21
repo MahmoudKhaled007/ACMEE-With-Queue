@@ -151,9 +151,10 @@
               <scg:Dictionary x:TypeArguments="x:String, Argument" />
             </ui:InvokeWorkflowFile.Arguments>
           </ui:InvokeWorkflowFile>
-          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="1- Getting Data From Queue &#xD;&#xA;2- Pass every Transction item to the vendorTaxId&#xD;&#xA;3- Select the month &#xD;&#xA;4-Download invoice&#xD;&#xA;" DisplayName="QueuePreformer.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,200" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="QueuePreformer.xaml">
+          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="1- Getting Data From Queue &#xA;2- Pass every Transction item to the vendorTaxId&#xA;3- Select the month &#xA;4-Download invoice&#xA;" DisplayName="QueuePreformer.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,200" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="QueuePreformer.xaml">
             <ui:InvokeWorkflowFile.Arguments>
-              <scg:Dictionary x:TypeArguments="x:String, Argument" />
+              <OutArgument x:TypeArguments="x:String" x:Key="o_TransactionItem" />
+              <OutArgument x:TypeArguments="x:String" x:Key="o_DownloadsFolder" />
             </ui:InvokeWorkflowFile.Arguments>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">

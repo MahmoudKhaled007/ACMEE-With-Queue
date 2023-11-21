@@ -81,7 +81,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Open Browser Chrome: ACME System 1 - Dashboard" sap:VirtualizedContainerService.HintSize="484,686" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="020fc368-1089-460b-83b5-44b037e4f7b4" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Open Browser Chrome: ACME System 1 - Dashboard" sap:VirtualizedContainerService.HintSize="484,686" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="020fc368-1089-460b-83b5-44b037e4f7b4" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>

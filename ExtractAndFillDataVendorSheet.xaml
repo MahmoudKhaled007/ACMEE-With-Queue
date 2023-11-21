@@ -1,12 +1,11 @@
 <Activity mc:Ignorable="sap sap2010" x:Class="ExtractAndFillDataVendorSheet" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="i_VendorName" Type="InArgument(x:String)" />
-    <x:Property Name="DownloadsFolder" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,2697</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,2880</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractAndFillDataVendorSheet_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,7 +105,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractAndFillDataVendorSheet" sap:VirtualizedContainerService.HintSize="748,2632" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractAndFillDataVendorSheet" sap:VirtualizedContainerService.HintSize="748,2815" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DownloadsFolder" />
     </Sequence.Variables>
@@ -115,9 +114,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="686,2521" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="686,2704" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Try>
-        <Sequence DisplayName="GetDownloadedExcelFiles" sap:VirtualizedContainerService.HintSize="648,2293" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence DisplayName="GetDownloadedExcelFiles" sap:VirtualizedContainerService.HintSize="648,2476" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <Sequence.Variables>
             <Variable x:TypeArguments="s:String[]" Name="ExcelFiles" />
             <Variable x:TypeArguments="x:String" Name="SearchPattern" />
@@ -127,6 +126,11 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="DownloadFolder" CacheStrategy="None" DisplayName="Get Asset" FolderPath="_Vois_Task" sap:VirtualizedContainerService.HintSize="586,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+            <ui:GetRobotAsset.Value>
+              <OutArgument x:TypeArguments="x:String">[DownloadsFolder]</OutArgument>
+            </ui:GetRobotAsset.Value>
+          </ui:GetRobotAsset>
           <Assign sap:VirtualizedContainerService.HintSize="586,82" sap2010:WorkflowViewState.IdRef="Assign_6">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[SearchPattern]</OutArgument>
@@ -140,7 +144,7 @@
               <OutArgument x:TypeArguments="s:String[]">[ExcelFiles]</OutArgument>
             </Assign.To>
             <Assign.Value>
-              <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(DownloadsFolder+"\", SearchPattern)]</InArgument>
+              <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(DownloadsFolder, SearchPattern)]</InArgument>
             </Assign.Value>
           </Assign>
           <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="586,1938" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ExcelFiles]">

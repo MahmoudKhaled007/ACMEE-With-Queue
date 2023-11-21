@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,1501</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,1464</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Extract_Data_From_Excel_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -129,7 +129,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Extract_Data_From_Excel" sap:VirtualizedContainerService.HintSize="630,1436" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extract_Data_From_Excel" sap:VirtualizedContainerService.HintSize="630,1399" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="SelectedExcelFile" />
     </Sequence.Variables>
@@ -138,13 +138,11 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:SelectFile sap2010:Annotation.AnnotationText="Browse For Excel File to make the path Dynamic&#xD;&#xA;" DisplayName="Browse For Excel File" Filter="Excel|*.xlsx;*.xls;*.xlsm;*.xlsb" sap:VirtualizedContainerService.HintSize="568,180" sap2010:WorkflowViewState.IdRef="SelectFile_1" SelectedFile="[SelectedExcelFile]">
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:SelectFile>
+    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="SelectedExcelFile" CacheStrategy="None" DisplayName="Get Asset" FolderPath="_Vois_Task" sap:VirtualizedContainerService.HintSize="568,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+      <ui:GetRobotAsset.Value>
+        <OutArgument x:TypeArguments="x:String">[SelectedExcelFile]</OutArgument>
+      </ui:GetRobotAsset.Value>
+    </ui:GetRobotAsset>
     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="568,1105" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Variables>
         <Variable x:TypeArguments="ui:WorkbookApplication" Name="VendorInvocesWorkbook" />
