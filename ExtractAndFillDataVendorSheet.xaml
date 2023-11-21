@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,3242</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,3413</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractAndFillDataVendorSheet_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,7 +105,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractAndFillDataVendorSheet" sap:VirtualizedContainerService.HintSize="748,3177" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractAndFillDataVendorSheet" sap:VirtualizedContainerService.HintSize="748,3348" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DownloadsFolder" />
     </Sequence.Variables>
@@ -115,9 +115,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="686,141" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;ExtractAndFillDataVendorSheet is Started Succefully!&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="686,2704" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="686,2875" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Try>
-        <Sequence DisplayName="GetDownloadedExcelFiles" sap:VirtualizedContainerService.HintSize="648,2476" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence DisplayName="GetDownloadedExcelFiles" sap:VirtualizedContainerService.HintSize="648,2647" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <Sequence.Variables>
             <Variable x:TypeArguments="s:String[]" Name="ExcelFiles" />
             <Variable x:TypeArguments="x:String" Name="SearchPattern" />
@@ -127,28 +127,38 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="DownloadFolder" CacheStrategy="None" DisplayName="Get Asset" FolderPath="_Vois_Task" sap:VirtualizedContainerService.HintSize="586,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="DownloadFolder" CacheStrategy="None" DisplayName="Get Asset of Download Folder Path" FolderPath="_Vois_Task" sap:VirtualizedContainerService.HintSize="586,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_1">
             <ui:GetRobotAsset.Value>
               <OutArgument x:TypeArguments="x:String">[DownloadsFolder]</OutArgument>
             </ui:GetRobotAsset.Value>
           </ui:GetRobotAsset>
-          <Assign sap:VirtualizedContainerService.HintSize="586,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+          <Assign sap2010:Annotation.AnnotationText="Assign SearchPattern any file ends with &quot;.xlsx&quot; and contain i_VendorName Argument" DisplayName="Assign SearchPattern" sap:VirtualizedContainerService.HintSize="586,124" sap2010:WorkflowViewState.IdRef="Assign_6">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[SearchPattern]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="x:String">[String.Format("*{0}*.xlsx", i_VendorName)]</InArgument>
             </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <Assign sap:VirtualizedContainerService.HintSize="586,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign sap2010:Annotation.AnnotationText="Assign ExcelFiles to all files of DownloadFolder  with the search criteria&#xD;&#xA;" DisplayName="Assign ExcelFiles" sap:VirtualizedContainerService.HintSize="586,124" sap2010:WorkflowViewState.IdRef="Assign_7">
             <Assign.To>
               <OutArgument x:TypeArguments="s:String[]">[ExcelFiles]</OutArgument>
             </Assign.To>
             <Assign.Value>
               <InArgument x:TypeArguments="s:String[]">[Directory.GetFiles(DownloadsFolder, SearchPattern)]</InArgument>
             </Assign.Value>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="586,1938" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ExcelFiles]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Reading Every Excel sheet on ExcelFiles &#xD;&#xA;then add a column to dt_WorkSheet&#xD;&#xA;then  Invoking SetOrdinal Method and Giving it a value of 0 to add the columns at the first &#xD;&#xA;then loop into dt_WorkSheet to populate row value of the new Column Vendor with i_VendorName input Argument" DisplayName="For Each ExcelFiles" sap:VirtualizedContainerService.HintSize="586,2025" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ExcelFiles]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
@@ -245,6 +255,7 @@
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEach>
