@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,2880</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,3242</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractAndFillDataVendorSheet_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,7 +105,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractAndFillDataVendorSheet" sap:VirtualizedContainerService.HintSize="748,2815" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractAndFillDataVendorSheet" sap:VirtualizedContainerService.HintSize="748,3177" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DownloadsFolder" />
     </Sequence.Variables>
@@ -114,6 +114,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="686,141" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;ExtractAndFillDataVendorSheet is Started Succefully!&quot;]" />
     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="686,2704" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Try>
         <Sequence DisplayName="GetDownloadedExcelFiles" sap:VirtualizedContainerService.HintSize="648,2476" sap2010:WorkflowViewState.IdRef="Sequence_12">
@@ -266,5 +267,6 @@
         </Catch>
       </TryCatch.Catches>
     </TryCatch>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="686,141" sap2010:WorkflowViewState.IdRef="LogMessage_12" Message="[&quot;ExtractAndFillDataVendorSheet is Finished Succefully!&quot;]" />
   </Sequence>
 </Activity>
