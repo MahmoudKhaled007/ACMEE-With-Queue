@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1208,3413</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1208,3533</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ExtractAndFillDataVendorSheet_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -105,7 +105,7 @@
       <AssemblyReference>System.IO.FileSystem.DriveInfo</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ExtractAndFillDataVendorSheet" sap:VirtualizedContainerService.HintSize="748,3348" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ExtractAndFillDataVendorSheet" sap:VirtualizedContainerService.HintSize="748,3468" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="DownloadsFolder" />
     </Sequence.Variables>
@@ -115,9 +115,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="686,141" sap2010:WorkflowViewState.IdRef="LogMessage_11" Message="[&quot;ExtractAndFillDataVendorSheet is Started Succefully!&quot;]" />
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="686,2875" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="686,2995" sap2010:WorkflowViewState.IdRef="TryCatch_3">
       <TryCatch.Try>
-        <Sequence DisplayName="GetDownloadedExcelFiles" sap:VirtualizedContainerService.HintSize="648,2647" sap2010:WorkflowViewState.IdRef="Sequence_12">
+        <Sequence DisplayName="GetDownloadedExcelFiles" sap:VirtualizedContainerService.HintSize="648,2767" sap2010:WorkflowViewState.IdRef="Sequence_12">
           <Sequence.Variables>
             <Variable x:TypeArguments="s:String[]" Name="ExcelFiles" />
             <Variable x:TypeArguments="x:String" Name="SearchPattern" />
@@ -145,7 +145,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <Assign sap2010:Annotation.AnnotationText="Assign ExcelFiles to all files of DownloadFolder  with the search criteria&#xD;&#xA;" DisplayName="Assign ExcelFiles" sap:VirtualizedContainerService.HintSize="586,124" sap2010:WorkflowViewState.IdRef="Assign_7">
+          <Assign sap2010:Annotation.AnnotationText="Assign ExcelFiles to all files of DownloadFolder  with the search criteria&#xA;" DisplayName="Assign ExcelFiles" sap:VirtualizedContainerService.HintSize="586,124" sap2010:WorkflowViewState.IdRef="Assign_7">
             <Assign.To>
               <OutArgument x:TypeArguments="s:String[]">[ExcelFiles]</OutArgument>
             </Assign.To>
@@ -158,13 +158,13 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </Assign>
-          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Reading Every Excel sheet on ExcelFiles &#xD;&#xA;then add a column to dt_WorkSheet&#xD;&#xA;then  Invoking SetOrdinal Method and Giving it a value of 0 to add the columns at the first &#xD;&#xA;then loop into dt_WorkSheet to populate row value of the new Column Vendor with i_VendorName input Argument" DisplayName="For Each ExcelFiles" sap:VirtualizedContainerService.HintSize="586,2025" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ExcelFiles]">
+          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Reading Every Excel sheet on ExcelFiles &#xA;then add a column to dt_WorkSheet&#xA;then  Invoking SetOrdinal Method and Giving it a value of 0 to add the columns at the first &#xA;then loop into dt_WorkSheet to populate row value of the new Column Vendor with i_VendorName input Argument" DisplayName="For Each ExcelFiles" sap:VirtualizedContainerService.HintSize="586,2145" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[ExcelFiles]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="x:String">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:String" Name="currentExcel" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1752" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1872" sap2010:WorkflowViewState.IdRef="Sequence_13">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sd:DataTable" Name="dt_WorkSheet" />
                   </Sequence.Variables>
@@ -174,7 +174,6 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_WorkSheet]" DisplayName="Read currentExcelWorkbook" sap:VirtualizedContainerService.HintSize="510,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Worksheet" WorkbookPath="[currentExcel]" />
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[currentExcel.ToString+&quot;is Filled Succefully&quot;]" />
                   <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Vendor" DataTable="[dt_WorkSheet]" DisplayName="Add Vendor Column" sap:VirtualizedContainerService.HintSize="510,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_8" />
                   <InvokeMethod sap2010:Annotation.AnnotationText="To change the position of a DataColumn in the DataColumnCollection of a DataTable" DisplayName="Invoke Method" sap:VirtualizedContainerService.HintSize="510,208" sap2010:WorkflowViewState.IdRef="InvokeMethod_2" MethodName="SetOrdinal">
                     <InvokeMethod.TargetObject>
@@ -248,6 +247,8 @@
                       </Catch>
                     </TryCatch.Catches>
                   </TryCatch>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[currentExcel.ToString+&quot;is Filled Succefully&quot;]" />
+                  <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="510,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[currentExcel.ToString]" />
                 </Sequence>
               </ActivityAction>
             </ui:ForEach.Body>

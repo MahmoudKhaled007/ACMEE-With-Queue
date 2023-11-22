@@ -1,7 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="QueuePreformer" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="QueuePreformer" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="o_TransactionItem" Type="OutArgument(x:String)" />
+    <x:Property Name="o_BrowserUI2" Type="InArgument(ui:UiElement)" />
   </x:Members>
+  <this:QueuePreformer.o_BrowserUI2>
+    <InArgument x:TypeArguments="ui:UiElement" />
+  </this:QueuePreformer.o_BrowserUI2>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
@@ -83,6 +87,8 @@
       <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
       <AssemblyReference>System.Data.SqlClient</AssemblyReference>
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Flowchart DisplayName="QueuePreformer" sap:VirtualizedContainerService.HintSize="634,765" sap2010:WorkflowViewState.IdRef="Flowchart_1">
@@ -120,7 +126,7 @@
               <av:PointCollection x:Key="ConnectorLocation">300,304.5 300,334.5 290,334.5 290,364</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <If sap2010:Annotation.AnnotationText="We will preform what come after getting data from queue from here" Condition="[TransactionItem IsNot Nothing]" DisplayName="If TransctionItem Is Not Nothing" sap:VirtualizedContainerService.HintSize="572,1407" sap2010:WorkflowViewState.IdRef="If_1">
+          <If sap2010:Annotation.AnnotationText="We will preform what come after getting data from queue from here" Condition="[TransactionItem IsNot Nothing]" DisplayName="If TransctionItem Is Not Nothing" sap:VirtualizedContainerService.HintSize="200,109" sap2010:WorkflowViewState.IdRef="If_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -163,9 +169,7 @@
                   </ui:InvokeWorkflowFile>
                   <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="CalculateTotalInvoicesForEachVendor.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="434,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="CalculateTotalInvoicesForEachVendor.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
-                      <InArgument x:TypeArguments="x:String" x:Key="i_VendorName">
-                        <VisualBasicValue x:TypeArguments="x:String" ExpressionText="o_TransactionItem" />
-                      </InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="i_VendorName">[o_TransactionItem]</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="BreakTriggerScopeInArgument" />
                     </ui:InvokeWorkflowFile.Arguments>
                   </ui:InvokeWorkflowFile>

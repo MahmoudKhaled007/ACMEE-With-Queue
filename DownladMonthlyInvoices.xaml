@@ -125,7 +125,7 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="644,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Message="[&quot;Download MonthlyInvoices is Started Succefully&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: ACME System 1 - Download Monthly Invoices" sap:VirtualizedContainerService.HintSize="644,1700" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="068d4fa9-b85d-47f7-8365-a75dca88af4d" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: ACME System 1 - Download Monthly Invoices" sap:VirtualizedContainerService.HintSize="644,1700" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" ScopeGuid="068d4fa9-b85d-47f7-8365-a75dca88af4d" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
