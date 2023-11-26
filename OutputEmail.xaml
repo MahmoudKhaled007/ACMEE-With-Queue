@@ -100,7 +100,7 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Sending The File to MAil&#xD;&#xA;" DisplayName="OutputEmail" sap:VirtualizedContainerService.HintSize="450,703" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Sending The File to MAil&#xA;" DisplayName="OutputEmail" sap:VirtualizedContainerService.HintSize="450,703" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:PasswordCredentials" Name="GmailCredentials" />
       <Variable x:TypeArguments="x:String" Name="DownloadFolder" />
@@ -118,12 +118,10 @@
       </ui:GetRobotAsset.Value>
     </ui:GetRobotAsset>
     <uas:GetUsernamePasswordX OrchestratorCredentialName="{x:Null}" TimeoutInSeconds="{x:Null}" AutosubmitTimeoutSeconds="10" Credential="[GmailCredentials]" CredentialName="UiPath: https://mail.google.com/mail/" CredentialsSource="CredentialsManager" DisplayName="Get Username/Password" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="GetUsernamePasswordX_1" />
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;I Hope this mail finds you well, Kindly Check The attached File.&quot;+vbCrLf+&quot; This file After All Automation process in the Task.&quot;+vbCrLf+&quot;Sincerly,&quot;+vbCrLf+&quot;Happy Automation, Mahmoud's Bot.&quot;]" DisplayName="Send SMTP Mail Message" Email="[GmailCredentials.Username]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="388,152" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="[GmailCredentials.Password]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="RPA VendorInvoicesData After Process" To="amigo.mahmoud22@gmail.com">
+    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Dear Haitham&quot;+vbCrLf+vbCrLf+&quot;This An Automated E-mail&quot;+vbCrLf+vbCrLf+&quot;I hope this email finds you well. I wanted to inform you that I have successfully completed the task assigned to me for the interview.&quot;+vbCrLf+&quot;I appreciate the opportunity to work on this assignment and am eager to discuss my approach and findings with you.&quot;+vbCrLf+&quot;I look forward to our scheduled meeting or interview to go over the details and answer any questions you may have. &quot;+vbCrLf+&quot;Thank you again for entrusting me with this task, and I am excited about the prospect of contributing to the team.&quot;+vbCrLf+&quot; This file After All Automation process in _VOIS Task.&quot;+vbCrLf+vbCrLf+&quot;Sincerly,&quot;+vbCrLf+&quot;Happy Automation, Mahmoud's Bot.&quot;]" DisplayName="Send SMTP Mail Message" Email="[GmailCredentials.Username]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="388,152" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="[GmailCredentials.Password]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Completion of RPA Interview Task " To="amigo.mahmoud22@gmail.com">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">
-            <VisualBasicValue x:TypeArguments="x:String" ExpressionText="SelectedExcelFile" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:String">[SelectedExcelFile]</InArgument>
         </scg:List>
       </ui:SendMail.Files>
     </ui:SendMail>
