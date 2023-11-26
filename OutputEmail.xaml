@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="OutputEmail" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1208,768" sap2010:WorkflowViewState.IdRef="OutputEmail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uas="clr-namespace:UiPath.Activities.System;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="OutputEmail" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1208,633" sap2010:WorkflowViewState.IdRef="OutputEmail_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uas="clr-namespace:UiPath.Activities.System;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -42,6 +42,7 @@
       <x:String>UiPath.Mail.Activities.Utils</x:String>
       <x:String>UiPath.Mail.Activities.Business.HtmlEditor</x:String>
       <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -98,32 +99,60 @@
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>UiPath.Python</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Sending The File to MAil&#xA;" DisplayName="OutputEmail" sap:VirtualizedContainerService.HintSize="450,703" sap2010:WorkflowViewState.IdRef="Sequence_1">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="ui:PasswordCredentials" Name="GmailCredentials" />
-      <Variable x:TypeArguments="x:String" Name="DownloadFolder" />
-      <Variable x:TypeArguments="x:String" Name="SelectedExcelFile" />
-    </Sequence.Variables>
+  <Sequence sap:VirtualizedContainerService.HintSize="496,484" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="SelectedExcelFile" CacheStrategy="None" DisplayName="Get Asset SelectedExcelFile" FolderPath="_Vois_Task" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
-      <ui:GetRobotAsset.Value>
-        <OutArgument x:TypeArguments="x:String">[SelectedExcelFile]</OutArgument>
-      </ui:GetRobotAsset.Value>
-    </ui:GetRobotAsset>
-    <uas:GetUsernamePasswordX OrchestratorCredentialName="{x:Null}" TimeoutInSeconds="{x:Null}" AutosubmitTimeoutSeconds="10" Credential="[GmailCredentials]" CredentialName="UiPath: https://mail.google.com/mail/" CredentialsSource="CredentialsManager" DisplayName="Get Username/Password" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="GetUsernamePasswordX_1" />
-    <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Dear Haitham&quot;+vbCrLf+vbCrLf+&quot;This An Automated E-mail&quot;+vbCrLf+vbCrLf+&quot;I hope this email finds you well. I wanted to inform you that I have successfully completed the task assigned to me for the interview.&quot;+vbCrLf+&quot;I appreciate the opportunity to work on this assignment and am eager to discuss my approach and findings with you.&quot;+vbCrLf+&quot;I look forward to our scheduled meeting or interview to go over the details and answer any questions you may have. &quot;+vbCrLf+&quot;Thank you again for entrusting me with this task, and I am excited about the prospect of contributing to the team.&quot;+vbCrLf+&quot; This file After All Automation process in _VOIS Task.&quot;+vbCrLf+vbCrLf+&quot;Sincerly,&quot;+vbCrLf+&quot;Happy Automation, Mahmoud's Bot.&quot;]" DisplayName="Send SMTP Mail Message" Email="[GmailCredentials.Username]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="388,152" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="[GmailCredentials.Password]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Completion of RPA Interview Task " To="amigo.mahmoud22@gmail.com">
-      <ui:SendMail.Files>
-        <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">[SelectedExcelFile]</InArgument>
-        </scg:List>
-      </ui:SendMail.Files>
-    </ui:SendMail>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="434,373" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap2010:Annotation.AnnotationText="Sending The File to MAil&#xA;" DisplayName="OutputEmail" sap:VirtualizedContainerService.HintSize="450,703" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="ui:PasswordCredentials" Name="GmailCredentials" />
+            <Variable x:TypeArguments="x:String" Name="DownloadFolder" />
+            <Variable x:TypeArguments="x:String" Name="SelectedExcelFile" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:GetRobotAsset TimeoutMS="{x:Null}" AssetName="SelectedExcelFile" CacheStrategy="None" DisplayName="Get Asset SelectedExcelFile" FolderPath="_Vois_Task" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="GetRobotAsset_2">
+            <ui:GetRobotAsset.Value>
+              <OutArgument x:TypeArguments="x:String">[SelectedExcelFile]</OutArgument>
+            </ui:GetRobotAsset.Value>
+          </ui:GetRobotAsset>
+          <uas:GetUsernamePasswordX OrchestratorCredentialName="{x:Null}" TimeoutInSeconds="{x:Null}" AutosubmitTimeoutSeconds="10" Credential="[GmailCredentials]" CredentialName="UiPath: https://mail.google.com/mail/" CredentialsSource="CredentialsManager" DisplayName="Get Username/Password" sap:VirtualizedContainerService.HintSize="388,175" sap2010:WorkflowViewState.IdRef="GetUsernamePasswordX_1" />
+          <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" UseOAuth="{x:Null}" Body="[&quot;Dear Haitham&quot;+vbCrLf+vbCrLf+&quot;This An Automated E-mail&quot;+vbCrLf+vbCrLf+&quot;I hope this email finds you well. I wanted to inform you that I have successfully completed the task assigned to me for the interview.&quot;+vbCrLf+&quot;I appreciate the opportunity to work on this assignment and am eager to discuss my approach and findings with you.&quot;+vbCrLf+&quot;I look forward to our scheduled meeting or interview to go over the details and answer any questions you may have. &quot;+vbCrLf+&quot;Thank you again for entrusting me with this task, and I am excited about the prospect of contributing to the team.&quot;+vbCrLf+&quot; This file After All Automation process in _VOIS Task.&quot;+vbCrLf+vbCrLf+&quot;Sincerly,&quot;+vbCrLf+&quot;Happy Automation, Mahmoud's Bot.&quot;]" DisplayName="Send SMTP Mail Message" Email="[GmailCredentials.Username]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="388,152" sap2010:WorkflowViewState.IdRef="SendMail_1" IgnoreCRL="False" IsBodyHtml="False" Password="[GmailCredentials.Password]" Port="587" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Completion of RPA Interview Task " To="amigo.mahmoud22@gmail.com">
+            <ui:SendMail.Files>
+              <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                <InArgument x:TypeArguments="x:String">[SelectedExcelFile]</InArgument>
+              </scg:List>
+            </ui:SendMail.Files>
+          </ui:SendMail>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,210" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Error]" Message="[&quot;Error Occured When Sending Email:   &quot;+ exception.Message]" />
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
   </Sequence>
 </Activity>
